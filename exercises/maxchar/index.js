@@ -7,7 +7,7 @@
 
 
 
-function maxChar(str) {
+/* function maxChar(str) {
     let strToObj = {};
     for (const char of str) {
         if (!strToObj[char]){
@@ -28,14 +28,31 @@ function maxChar(str) {
     
     return maxChar;
 
+} */
+
+function maxChar(str) {
+    let stringMap = {};
+    for (let char of str) {
+        if (stringMap[char]) {
+            stringMap[char]++;
+        } else {
+            stringMap[char] = 1;
+        }
+    }
+    let maxKey;
+    let maxValue = 0;
+
+    for (let key in stringMap) {
+        if (stringMap[key] > maxValue) {
+            maxValue = stringMap[key];
+            maxKey = key;
+        }
+
+    }
+    return maxKey;
+
+
 }
 
-
-
-
-
-/* for (let key of arrayDiChiavi){
-    console.log(key);
-} */
 
 module.exports = maxChar;
