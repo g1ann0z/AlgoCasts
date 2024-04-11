@@ -8,6 +8,26 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+//iterativa più veloce, complessità lineare n
+/* function fib(n) {
+    let arrayFib = [];
+    for(let i = 0; i <= n; i++){
+        if (i < 2){
+            arrayFib[i] = i;
+        } else {
+            arrayFib[i] = arrayFib[i - 2] + arrayFib [i - 1];
+        }
+    }
+    return arrayFib[n];
+} */
+
+//ricorsiva piu lenta, tempo esponenziale 2 ^ n
+function fib(n) {
+    if (n < 2){
+        return n;
+    } else {
+        return fib(n - 2) + fib(n - 1);
+    }
+}
 
 module.exports = fib;
