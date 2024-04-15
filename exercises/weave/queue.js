@@ -9,13 +9,17 @@ class Queue {
     this.data = [];
   }
 
-  add(record) {
+    add(record) {
     this.data.unshift(record);
-  }
+     }
 
-  remove() {
-    return this.data.pop();
-  }
+    remove() {
+     return this.data.pop();
+    }
+
+    peek() {
+      return this.data.length - 1;
+    } 
 }
 
 module.exports = Queue;

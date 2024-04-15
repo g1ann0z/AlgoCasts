@@ -8,7 +8,7 @@
 // Example:
 //   fib(4) === 3
 
-//iterativa più veloce, complessità lineare n
+//iterativa più veloce, complessità lineare nhh
 /* function fib(n) {
     let arrayFib = [];
     for(let i = 0; i <= n; i++){
