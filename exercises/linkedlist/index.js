@@ -74,7 +74,17 @@ class LinkedList {
             node = node.next;
         }
         previus.next = null;
-    }   
+    }
+    
+    insertLast(data){
+        const currentLast = this.getLast();
+
+        if(currentLast){
+            currentLast.next = new Node(data);
+        } else {
+            this.insertFirst(data);
+        }
+    }
 
 }
 
