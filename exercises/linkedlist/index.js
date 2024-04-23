@@ -86,6 +86,68 @@ class LinkedList {
         }
     }
 
+    getAt(index){
+
+        if(!this.head){
+            return null;
+        }
+        let node = this.head;
+        let position = 0;
+        while(node){
+            if(position === index){
+                return node;
+            } else {
+                position++;
+                node = node.next;
+            }
+
+        }
+        if (position > this.size()){
+            return null;
+        }
+        
+
+    }
+
+    removeAt(index){
+        if (!this.head){
+            return;
+        }
+
+        if (index === 0){
+            this.head = this.head.next;
+            return;
+        }
+
+        const previus = this.getAt(index - 1);
+
+        if(!previus || !previus.next){
+          return;  
+        }
+        previus.next = previus.next.next;
+    }
+
+    insertAt(data, index){
+        if(!this.head){
+            this.head = new Node(data);
+            return;
+        }
+
+        if(index === 0){
+            this.head = new Node(data, this.head);
+            return;
+        }
+
+        const previusNode = this.getAt(index - 1) || this.getLast();
+        const nextNode = this.getAt(index);
+
+        if(!nextNode){
+            previusNode.next = new Node(data);
+            return;
+        }
+        previusNode.next = new Node(data, nextNode);
+    }
+
 }
 
 
